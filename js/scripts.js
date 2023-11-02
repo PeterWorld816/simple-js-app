@@ -1,4 +1,5 @@
+alert('Hello world');
 
-var favoriteFood = "pizzaa";
+var favoriteFood = "pizza";
 
-document.write(favoriteFood);
+document.write("My favorite food is: " + favoriteFood);
