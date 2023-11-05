@@ -1,5 +1,6 @@
-alert('Hello world');
+let pokemons={name:'balbasure', type: "grass", height: 0.5}
 
-var favoriteFood = "pizza";
+let pokemons2={name:'charmander', type: 'fire', height: 0.6}
 
-document.write("My favorite food is: " + favoriteFood);
+let pokemons3={name:'squirtle', type: 'water', height: 0.5} 
+
