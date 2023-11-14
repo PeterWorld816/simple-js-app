@@ -9,12 +9,9 @@ let pokemonList = [
 
 
 for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height < 1 && pokemonList[i].height > 0.4) {
-        console.log(pokemonList[i].name + '');
-    } else if (pokemonList[i].height < 0.3) {
-        console.log(pokemonList[i].name + '');
-    } else {
-        console.log(pokemonList[i].name + ' is large pokemon');
-    }
-
+    if (pokemonList[i].height > 0.9) {
+        document.write(pokemonList[i].name+ '(height:' + pokemonList[i].height+ ') Wow, that’s big! <br>');
+   } else{
+        document.write(pokemonList[i].name + '<br>');
+   }
 }
