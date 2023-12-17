@@ -23,33 +23,7 @@ for (let i = 0; i < pokemonList.length; i++) {
 //1.5 Part1 
 
 
-
-
-
-//1.5 Part 2
-
-var pokemonRepository = (function () {
-    // Private pokemonList variable
-    var pokemonList = [
-      { name: 'Venusaur', type: ['grass'], height: 0.5 },
-      { name: 'Charizard', type: ['fire', 'grass'], height: 1 },
-      { name: 'Blastoise', type: ['water'], height: 0.2 }
-    ];
-  
-    return {
-      // Public function to add a single item to pokemonList
-      add: function (item) {
-        // Ensure that the item is an object and has a name property
-        if (typeof item === 'object' && 'name' in item) {
-          pokemonList.push(item);
-          console.log(item.name + ' added to pokemonList');
-        } else {
-          console.error('Invalid Pokémon format. Please provide an object with a "name" property.');
-        }
-      },
-  
-      // Other public functions related to pokemonList go here
-      pokemonList.forEach(function(pokemon)
+pokemonList.forEach(function(pokemon)
 {
     if(pokemon.height>0.9){
         document.write(pokemon.name+'(height:' + pokemon.height +')Wow, that"s big! <br>');
@@ -58,13 +32,37 @@ var pokemonRepository = (function () {
         document.write(pokemon.name+'(height:' + pokemon.height+')<br>');
     }
 });
+
+
+//1.5 Part 2
+
+var pokemonRepository = (function () {
+    // Private array to store Pokemon
+    var pokemonList = [
+      { name: 'Venusaur', type: ['grass'], height: 0.5 },
+      { name: 'Charizard', type: ['fire', 'grass'], height: 1 },
+      { name: 'Blastoise', type: ['water'], height: 0.2 }
+    ];
   
-      // Public function to retrieve the pokemonList
-      getAll: function () {
-        return pokemonList;
-      }
+    var publickAPI = {
+      getAll: getAll,
+      add: add
     };
-  })();
+
+    //Return the public object
+    return publickAPI;
+
+    //Public function to get all Pokemon
+    function getAll(){
+      return pokemonList;
+    }
+
+    //Public function to add a single Pokemon
+    function add(pokemon){
+      pokemonList.push(pokemon);
+    }
+})();
+
   
   // Example usage:
   var newPokemon = { name: 'Squirtle', type: ['water'], height: 0.3 };
