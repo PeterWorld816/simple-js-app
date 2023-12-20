@@ -20,18 +20,7 @@ for (let i = 0; i < pokemonList.length; i++) {
 
 */
 
-//1.5 Part1 
 
-
-pokemonList.forEach(function(pokemon)
-{
-    if(pokemon.height>0.9){
-        document.write(pokemon.name+'(height:' + pokemon.height +')Wow, that"s big! <br>');
-    }
-    else{
-        document.write(pokemon.name+'(height:' + pokemon.height+')<br>');
-    }
-});
 
 
 //1.5 Part 2
@@ -68,6 +57,22 @@ var pokemonRepository = (function () {
   var newPokemon = { name: 'Squirtle', type: ['water'], height: 0.3 };
   pokemonRepository.add(newPokemon);
   
+  var newPokemon = { name: 'Squirtle2', type: ['water'], height: 0.3 };
+  pokemonRepository.add(newPokemon);
+
   // Example usage to retrieve the pokemonList
   var allPokemon = pokemonRepository.getAll();
   console.log(allPokemon);
+
+  //1.5 Part1 
+
+
+allPokemon.forEach(function(pokemon)
+{
+    if(pokemon.height>0.9){
+        document.write(pokemon.name+'(height:' + pokemon.height +')Wow, that"s big! <br>');
+    }
+    else{
+        document.write(pokemon.name+'(height:' + pokemon.height+')<br>');
+    }
+});
