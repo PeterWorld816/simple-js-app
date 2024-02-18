@@ -142,5 +142,3 @@ pokemonRepository.loadList().then(function () {
     });
     
 });
-
-
