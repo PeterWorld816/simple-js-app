@@ -85,13 +85,9 @@ let pokemonRepository = (function () {
     
         let imageFront = document.createElement('img');
         imageFront.classList.add('modal-img');
-        imageFront.src = pokemon.imageUrlFront;
+        imageFront.src = pokemon.imageUrl;
         imageFront.alt = 'Front image of ' + pokemon.name;
-    
-        let imageBack = document.createElement('img');
-        imageBack.classList.add('modal-img');
-        imageBack.src = pokemon.imageUrlBack;
-        imageBack.alt = 'Back image of ' + pokemon.name;
+
     
         let typesElement = document.createElement('p');
         let types = [pokemon.types[0].type.name];
@@ -103,24 +99,13 @@ let pokemonRepository = (function () {
         let heightElement = document.createElement('p');
         heightElement.innerHTML = 'Height: ' + pokemon.height;
     
-        let weigthElement = document.createElement('p');
-        weigthElement.innerHTML = 'Weigth: ' + pokemon.weight;
-    
-        let abilities = document.createElement('p');
-        let abilitiesList = [pokemon.abilities[0].ability.name];
-        for (let i = 1; i < pokemon.abilities.length; i++) {
-          abilitiesList.push(', ' + pokemon.abilities[i].ability.name);
-        }
-        abilities.innerHTML = 'Abilities: ' + abilitiesList.join('');
+        
     
         modalHeader.appendChild(modalTitle);
         modalHeader.appendChild(closeButtonElement);
         modalBody.appendChild(imageFront);
-        modalBody.appendChild(imageBack);
         modalBody.appendChild(typesElement);
         modalBody.appendChild(heightElement);
-        modalBody.appendChild(weigthElement);
-        modalBody.appendChild(abilities);
       }
 
 
